@@ -1,10 +1,11 @@
 import { useParams, Link } from "react-router-dom";
+import Comentario from "./Comentario";
 export default function PostFull() {
   let { id } = useParams();
   return (
     <div className="max-h-screen flex">
       <div className="w-3/5 h-screen bg-black h-full flex flex-col items-center justify-center">
-        <Link to="/">
+        <Link to="/home">
           <button className="border absolute border-black focus:outline rounded-full bg-black top-4 left-4">
             <img className="w-8" src="/icons/cerrar.svg" alt="" />
           </button>
@@ -39,12 +40,18 @@ export default function PostFull() {
             <img className="w-8" src="/icons/compartir.svg" alt="" />
           </button>
         </div>
-        <div className="mt-5">
+        <div className="mt-5 h-96 overflow-auto">
+          <Comentario />
+          <Comentario />
+          <Comentario />
+          <Comentario />
+        </div>
+        <div className="absolute bottom-0 w-2/5 flex">
           <input
-            className="border p-2 rounded border-black mr-4 "
+            className="border-t p-2 border-black px-5  flex-grow focus:outline-none"
             placeholder="Escribe un comentario"
           />
-          <button className="border px-4 py-2 rounded border-black focus:outline-none">
+          <button className="border-t px-4 py-2 border-black focus:outline-none">
             Comentar
           </button>
         </div>
